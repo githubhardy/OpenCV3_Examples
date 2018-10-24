@@ -258,28 +258,28 @@ int main()
 	CommonTool tool;
 
 	//1   char* --- wchar_t*
-	wchar_t *wch1 = tool.charTowchar(nullptr, "£®1£©Ã⁄ ¢ char* to wchar*");
-	char * ch2 = tool.wcharTochar(nullptr, L"Ã⁄ ¢ wchar* to char*");
+	wchar_t *wch1 = tool.charTowchar(nullptr, "£®1£©≤‚ ‘ char* to wchar*");
+	char * ch2 = tool.wcharTochar(nullptr, L"≤‚ ‘ wchar* to char*");
 	wcout << wch1 << endl;
 	cout << ch2 << endl;
 
 	//2   CString ---- TCHAR*
-	CString cstr81(tool.TCHARToCString(_T("£®2£©Ã⁄ ¢  TCHAR* to CString")));
+	CString cstr81(tool.TCHARToCString(_T("£®2£©≤‚ ‘  TCHAR* to CString")));
 	tcout << cstr81.GetString() << endl;
-	CString s1 = _T("Ã⁄ ¢ CString to TCHAR*");
+	CString s1 = _T("≤‚ ‘ CString to TCHAR*");
 	TCHAR* ch82 = tool.CStringToTCHAR(nullptr, s1);
 	tcout << ch82 << endl;
 	
 	//3 std::string/ std::wstring --- TCHAR*
-	string str22 = ("£®3£©Ã⁄ ¢ string to TCHAR*");
+	string str22 = ("£®3£©≤‚ ‘ string to TCHAR*");
 	tcout << tool.stringToTCHAR(str22) << endl;
-	wstring wstr22 = _T("Ã⁄ ¢ wstring to TCHAR*");
+	wstring wstr22 = _T("≤‚ ‘ wstring to TCHAR*");
 	tcout << tool.wtringToTCHAR(wstr22)<<endl;
 	
 
 	//4 TCHAR* µΩstd::string/ std::wstringµƒ◊™ªª£ª
-	TCHAR* test1 = _T("£®4£©Ã⁄ ¢ TCHAR* TO string");
-	TCHAR* test2 = _T("Ã⁄ ¢ TCHAR* TO wstring");
+	TCHAR* test1 = _T("£®4£©≤‚ ‘ TCHAR* TO string");
+	TCHAR* test2 = _T("≤‚ ‘ TCHAR* TO wstring");
 	std::string str11 = tool.TCHARTostring(test1);
 	cout << str11 << endl;
 	std::wstring str12 = tool.TCHARTowstring(test2);
@@ -287,11 +287,11 @@ int main()
 
 
 	//5  CStringA --- CString
-	CString cstr1 = _T("£®5£©Ã⁄ ¢ CStringToCStringA ≤‚ ‘1");
+	CString cstr1 = _T("£®5£©≤‚ ‘ CStringToCStringA ≤‚ ‘1");
 	CStringA& cstrA1 = tool.CStringToCStringA(cstr1);
 	cout << cstrA1.GetString() << endl;
 
-	CStringA cstrA2 = "Ã⁄ ¢ CStringAToCString ≤‚ ‘2";
+	CStringA cstrA2 = "≤‚ ‘ CStringAToCString ≤‚ ‘2";
 	CString& cstr2 = tool.CStringAToCString(cstrA2);
 	wcout << cstr2.GetString() << endl;
 
